@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hydralite_app/auth/loginButton.dart';
@@ -13,6 +14,11 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     final bool lightMode = Theme.of(context).brightness == Brightness.light;
+
+    final mySystemTheme = SystemUiOverlayStyle.light.copyWith(
+        systemNavigationBarColor: lightMode ? Colors.white : Colors.black);
+
+    SystemChrome.setSystemUIOverlayStyle(mySystemTheme);
 
     return SafeArea(
       child: Scaffold(
