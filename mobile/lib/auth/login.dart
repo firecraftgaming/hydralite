@@ -15,10 +15,10 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     final bool lightMode = Theme.of(context).brightness == Brightness.light;
 
-    final mySystemTheme = SystemUiOverlayStyle.light.copyWith(
+    final theme = SystemUiOverlayStyle.light.copyWith(
         systemNavigationBarColor: lightMode ? Colors.white : Colors.black);
 
-    SystemChrome.setSystemUIOverlayStyle(mySystemTheme);
+    SystemChrome.setSystemUIOverlayStyle(theme);
 
     return SafeArea(
       child: Scaffold(
